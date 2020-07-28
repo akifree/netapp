@@ -1,0 +1,402 @@
+
+networksetup ヘルプ情報
+------------------------------- 
+使用法: networksetup -listnetworkserviceorder
+	接続しようとしたサービスに対応するポートとデバイスを順番に表示する
+	をネットワークに接続します。アスタリスク (*) は、サービスが無効になっていることを示します。
+
+使用法: networksetup -listallnetworkservices
+	サービスの一覧を表示します。アスタリスク(*)はネットワークサービスが無効になっていることを示します。
+
+使用法: networksetup -listallhardwareports
+	対応するデバイス名とイーサネットアドレスを持つハードウェアポートの一覧を表示します。
+
+使用法: networksetup -detectnewhardware
+	新しいネットワークハードウェアを検出し、ハードウェア上にデフォルトのネットワークサービスを作成します。
+
+使用法: networksetup -getmacaddress <ハードウェアポートまたはデバイス名
+	指定したハードウェアポートまたはデバイスのイーサネット（またはWi-Fi）アドレスを表示します。
+
+使用法: networksetup -getcomputername
+	コンピュータ名を表示します。
+
+使用法: networksetup -setcomputername <name>
+	コンピュータの名前 (有効な場合) を <name> に設定します。
+
+使用法: networksetup -getinfo <networkservice>
+	IPv4アドレス、IPv6アドレス、サブネットマスクを表示します。
+	ルータアドレス、<networkservice>のイーサネットアドレス。
+
+使用法: networksetup -setmanual <networkservice> <ip> <subnet> <router
+	<networkservice> TCP/IP設定を手動にして、IPアドレスをipに設定します。
+	サブネットマスクをサブネットに、ルーターアドレスをルーターに設定しました。
+
+使用法: networksetup -setdhcp <networkservice> [clientid]
+	<networkservice> TCP/IP設定をDHCPに設定します。を設定することができます。
+ 	DHCPクライアントIDをオプションの[clientid]に指定します。clientid]には"Empty"を指定します。
+	をクリックしてDHCPクライアントIDをクリアします。
+
+使用法: networksetup -setbootp <networkservice>
+	<networkservice> TCP/IP設定をBOOTPに設定します。
+
+使用法: networksetup -setmanualwithdhcprouter <networkservice> <ip 
+	IPアドレスを設定したDHCPルータで<networkservice> TCP/IP設定を手動にします。
+	をIPに変換します。
+
+使用法: networksetup -getadditionalroutes <networkservice>
+	<networkservice> に関連付けられた追加の IPv4 ルートを取得する
+
+使用法: networksetup -setadditionalroutes <networkservice> [ <dest> <mask> <gateway> ]* [networkservice] [ <dest> <mask> <gateway] * [networkservice] 
+	<networkservice>に関連付けられた追加のIPv4経路を設定します。
+	1つ以上の [ <dest> <mask> <gateway> ] タプルを指定します。
+	引数を指定せずに追加のルートを削除します。
+	<gateway>が""の場合、ルートはインターフェイスへの直接接続となります。
+
+使用法: networksetup -setv4off <networkservice> 
+	<networkservice>でIPv4をオフにします。 
+
+使用法: networksetup -setv6off <networkservice> 
+	<networkservice>でIPv6をオフにします。 
+
+使用法: networksetup -setv6automatic <networkservice> 
+	サービスが自動的にIPv6情報を取得するように設定します。 
+
+使用法: networksetup -setv6LinkLocal <ネットワークサービス 
+	本サービスの IPv6 をローカルリンクでのみ使用するように設定します。 
+
+使用法: networksetup -setv6manual <networkservice> <address> <prefixlength> <router
+	サービスのIPv6情報を手動で取得するように設定します。
+	<address> <prefixLength>と<router>を指定します。
+
+使用法: networksetup -getv6additionalroutes <networkservice>
+	<networkservice> に関連付けられた追加の IPv6 ルートを取得する
+    
+使用法: networksetup -setv6additionalroutes <networkservice> [ <dest> <prefixlength> <gateway> ] * [networkservice] [ <dest> <prefixlength> <gateway] * [networkservice]
+	<networkservice>に関連付けられた追加のIPv6ルートを設定します。
+	1つ以上の [ <dest> <prefixlength> <gateway> ] タプルを指定してください。
+	引数を指定せずに追加のルートを削除します。
+	<gateway>が""の場合、ルートはインターフェイスへの直接接続となります。
+
+使用法: networksetup -getdnsservers <networkservice>
+	<networkservice>のDNS情報を表示します。
+
+使用法: networksetup -setdnsservers <networkservice> <dns1> [dns2] [...] 
+	<networkservice> DNSサーバを<dns1> [dns2] [...]に設定します。任意の数のDNSサーバを
+	を指定します。<dns1>に"Empty"を指定すると、すべてのDNSエントリがクリアされます。
+
+使用法: networksetup -getsearchdomains <networkservice>
+	<networkservice>のドメイン情報を表示します。
+
+使用法: networksetup -setsearchdomains <networkservice> <domain1> [domain2] [...] 
+	<networkservice>ドメインネームサーバを<domain1> [domain2] [...]に設定します。任意の数のドメイン名
+ 	サーバーを指定することができます。<domain1>に"Empty"を指定すると、すべてのドメイン名のエントリがクリアされます。
+
+使用法: networksetup -create6to4service <newnetworkservicename> 
+	<newnetworkservicename>という名前の6から4までのサービスを作成します。
+
+使用法: networksetup -set6to4automatic <networkservice> 
+	その6から4の情報を自動的に取得するサービスを設定します。 
+
+使用法: networksetup -set6to4manual <networkservice> <relayaddress
+	その6から4の情報を手動で取得するためのサービスを設定します。 
+	中継アドレスには<relayaddress>を指定します。
+
+使用法: networksetup -getftpproxy <networkservice>
+	<networkservice>のFTPプロキシ(サーバ、ポート、有効値)情報を表示します。
+
+使用法: networksetup -setftpproxy <networkservice> <domain> <port number> <authenticated> <username> <password
+	<networkservice>のFTPプロキシを<domain>と<port number>で設定します。プロキシをオンにします。オプションで、<authenticated>に<on>または<off>を指定すると、認証済みプロキシのサポートを有効にしたり無効にしたりすることができます。認証済みプロキシのサポートをオンにする場合は、<ユーザ名>と<パスワード>を指定します。
+
+使用法: networksetup -setftpproxystate <networkservice> <オンオフ
+	FTPプロキシを<on>または<off>に設定します。
+
+使用法: networksetup -getwebproxy <networkservice>
+	<networkservice>のWebプロキシ(サーバ、ポート、有効値)情報を表示します。
+
+使用法: networksetup -setwebproxy <networkservice> <domain> <port number> <authenticated> <username> <password
+	<networkservice>のWebプロキシを<domain>と<port number>で設定します。プロキシをオンにします。オプションで、<authenticated>に<on>または<off>を指定すると、認証済みプロキシのサポートを有効にしたり無効にしたりすることができます。認証済みプロキシのサポートをオンにする場合は、<ユーザ名>と<パスワード>を指定します。
+
+使用法: networksetup -setwebproxystate <networkservice> <オンオフ
+	Webプロキシを<on>または<off>のいずれかに設定します。
+
+使用法: networksetup -getsecurewebproxy <networkservice> の場合
+	<networkservice>のセキュアWebプロキシ(サーバ、ポート、有効値)情報を表示します。
+
+使用法: networksetup -setsecurewebproxy <networkservice> <domain> <port number> <authenticated> <username> <password>
+	<networkservice>のセキュアWebプロキシを<domain>と<port number>で設定します。プロキシをオンにします。オプションで、<authenticated>に<on>または<off>を指定すると、認証済みプロキシのサポートを有効にしたり無効にしたりできます。認証済みプロキシのサポートをオンにする場合は、<ユーザ名>と<パスワード>を指定します。
+
+使用法: networksetup -setsecurewebproxystate <networkservice> <オンオフ
+	SecureWeb プロキシを <on> または <off> のいずれかに設定します。
+
+使用法: networksetup -getstreamingproxy <networkservice>
+	<networkservice>のストリーミングプロキシ(サーバ、ポート、有効値)情報を表示します。
+
+使用法: networksetup -setstreamingproxy <networkservice> <domain> <port number> <authenticated> <username> <password
+	<networkservice>にストリーミングプロキシを<domain>と<port number>で設定します。プロキシをオンにします。オプションで、<authenticated>に<on>または<off>を指定すると、認証済みプロキシのサポートを有効にしたり無効にしたりすることができます。認証済みプロキシのサポートをオンにする場合は、<ユーザ名>と<パスワード>を指定します。
+
+使用法: networksetup -setstreamingproxystate <networkservice> <オンオフ
+	ストリーミングプロキシを<on>または<off>に設定します。
+
+使用法: networksetup -getgopherproxy <networkservice>
+	<networkservice>のGopherプロキシ(サーバ、ポート、有効値)情報を表示します。
+
+使用法: networksetup -setgopherproxy <networkservice> <domain> <port number> <authenticated> <username> <password
+	<networkservice> に <domain> と <port number> を指定して Gopher proxy を設定します。プロキシをオンにします。オプションで、<authenticated>に<on>または<off>を指定すると、認証済みプロキシのサポートを有効にしたり無効にしたりすることができます。認証済みプロキシのサポートをオンにする場合は、<ユーザ名>と<パスワード>を指定します。
+
+使用法: networksetup -setgopherproxystate <networkservice> <オンオフ
+	Gopherのプロキシを<on>または<off>のいずれかに設定します。
+
+使用法: networksetup -getsocksfirewallproxy <networkservice> -getsocksfirewallproxy
+	<networkservice>のSOCKS Firewallプロキシ(サーバ、ポート、有効値)情報を表示します。
+
+使用法: networksetup -setsocksfirewallproxy <networkservice> <domain> <port number> <authenticated> <username> <password>
+	SOCKS Firewallのプロキシを<networkservice>に<domain>と<port number>で設定します。プロキシをオンにします。オプションで、<authenticated>に<on>または<off>を指定すると、認証済みプロキシのサポートを有効にしたり無効にしたりできます。認証済みプロキシのサポートをオンにする場合は、<ユーザ名>と<パスワード>を指定します。
+
+使用法: networksetup -setsocksfirewallproxystate <networkservice> <オンオフ
+	SOCKS Firewallのプロキシを<on>または<off>のいずれかに設定します。
+
+使用法: networksetup -getproxybypassdomains <networkservice>
+	<networkservice>のバイパスドメイン名を表示します。
+
+使用法: networksetup -setproxybypassdomains <networkservice> <domain1> [domain2] [...]
+	<networkservice>のバイパスドメインネームサーバーを<domain1> [domain2] [...]に設定します。任意の数の
+	ドメインネームサーバーを指定することができます。<domain1>に"Empty"を指定すると、すべての
+	ドメイン名のエントリ。
+
+使用法: networksetup -getproxyautodiscovery <networkservice>の場合
+	<ネットワークサービス>のプロキシ自動発見がオンかオフかを表示します。
+
+使用法: networksetup -setproxyautodiscovery <networkservice> <オンオフ
+	プロキシ自動検出を <on> または <off> に設定します。
+
+使用法: networksetup -getpassiveftp <networkservice>
+	<networkservice>のパッシブFTPがオンかオフかを表示します。
+
+使用法: networksetup -setpassiveftp <networkservice> <オンオフ
+	パッシブFTPを<on>または<off>に設定します。
+
+使用法: networksetup -setautoproxyurl <networkservice> <url
+	プロキシ自動設定を<networkservice>のurlに設定し、有効にします。
+
+使用法: networksetup -getautoproxyurl <networkservice>
+	<networkservice>のプロキシ自動設定(url、有効)情報を表示します。
+
+使用法: networksetup -setautoproxystate <networkservice> <オンオフ
+	プロキシの自動設定を <on> または <off> のいずれかに設定します。
+
+使用法: networksetup -getairportnetwork <デバイス名
+	<デバイス名>の現在のWi-Fiネットワークを表示します。
+
+使用法: networksetup -setairportnetwork <デバイス名> <ネットワーク> [パスワード]
+	<デバイス名>のWi-Fiネットワークを<ネットワーク>に設定します。
+	パスワードが含まれている場合は、キーチェーンに格納されます。
+
+使用法: networksetup -getairportpower <デバイス名
+	<機器名>のWi-Fi電源のON/OFFを表示します。
+
+使用法: networksetup -setairportpower <デバイス名> <オンオフ
+	<デバイス名>のWi-Fi電源を<on>または<off>に設定します。
+
+使用法: networksetup -listpreferredwirelessnetworks <デバイス名
+	<デバイス名>の優先するワイヤレスネットワークをリストアップしてください。
+
+使用法: networksetup -addpreferredwirelessnetworkatindex <デバイス名> <ネットワーク> <インデックス> <セキュリティタイプ> [パスワード]
+	<index>の<デバイス名>の優先リストに<network>という名前のワイヤレスネットワークを追加します。
+	セキュリティタイプは、なしの場合はOPEN、WPA Personalの場合はWPA、WPA Enterpriseの場合はWPAEを使用します。 
+	WPA2 Personalの場合はWPA2、WPA2 Enterpriseの場合はWPA2E、Plain WEPの場合はWEP、802.1X WEPの場合は8021XWEP。
+	パスワードが含まれている場合は、キーチェーンに格納されます。
+
+使用法: networksetup -removepreferredwirelessnetwork <デバイス名> <ネットワーク
+	<デバイス名>の優先ワイヤレスネットワークリストから<network>を削除します。
+
+使用法: networksetup -removeallpreferredwirelessnetworks <デバイス名
+	<デバイス名>の優先ワイヤレスネットワークリストからすべてのネットワークを削除します。
+
+使用法: networksetup -getnetworkserviceenabled <networkservice>
+	サービスがオンかオフか（有効か無効か）を表示します。
+
+使用法: networksetup -setnetworkserviceenabled <networkservice> <オンオフ
+	<networkservice>を<on>または<off>のいずれかに設定します(有効または無効)。
+
+使用法: networksetup -createnetworkservice <newnetworkservicename> <ハードウェアポート
+	ポート <hardwareport> に <networkservice> という名前のサービスを作成します。新しいサービスはデフォルトで有効になります。
+
+使用法: networksetup -renamenetworkservice <networkservice> <newnetworkservicename>
+	<networkservice>の名前を<newnetworkservicename>に変更します。
+
+使用法: networksetup -duplicatenetworkservice <networkservice> <newnetworkservicename>
+	<networkservice>を複製し、<newnetworkservicename>で名前を付けます。
+
+使用法: networksetup -removenetworkservice <networkservice>
+	<networkservice>という名前のサービスを削除します。このサービスが<networkservice>がオンになっているハードウェアポート上の唯一のサービスである場合は失敗します。
+
+使用法: networksetup -ordernetworkservices <service1> <service2> <service3> <...>
+	指定した順番でサービスを注文します。サービスの順番を表示するには「-listnetworkserviceorder」を使用します。
+	注：スペースを含むサービス名（「ビルトインイーサネット」など）は、引用符で囲んでください。
+
+使用法: networksetup -setMTUAndMediaAutomatically <ハードウェアポートまたはデバイス名>の場合
+	指定したHardwareeportまたはDeviceをMTUとMediaの自動設定に戻します。
+
+使用法: networksetup -getMTU <ハードウェアポートまたはデバイス名> の場合
+	指定したHardwareeportまたはDeviceのMTU値を取得します。
+
+使用法: networksetup -setMTU <ハードウェアポートまたはデバイス名> <値
+	指定したハードウェアポートまたはデバイスのMTUを設定します。
+
+使用法: networksetup -listvalidMTUrange <ハードウェアポートまたはデバイス名
+	指定したHardwareeportまたはDeviceの有効なMTU範囲を一覧表示します。
+
+使用法: networksetup -getmedia <ハードウェアポートまたはデバイス名
+	メディアの現在の設定と、指定されたハードウェアポートまたはデバイス上のアクティブなメディアの両方を表示します。
+
+使用法: networksetup -setmedia <ハードウェアポートまたはデバイス名> <subtype> [option1] [option2] [...]
+	サブタイプに指定したハードウェアポートまたはデバイスにメディアを設定します。サブタイプに応じてオプションの[option1]と追加オプションを指定します。有効なオプションはいくつでも指定できます。
+
+使用法: networksetup -listvalidmedia <ハードウェアポートまたはデバイス名
+ 	ハードウェアポートまたはデバイス名の有効なメディアオプションを一覧表示します。利用可能なサブタイプとサブタイプごとのオプションを列挙します。
+
+使用法: networksetup -createVLAN <VLAN名> <デバイス名> <タグ
+	デバイス<デバイス名>上に名前<VLAN名>のVLANを一意のタグ<tag>で作成します。VLAN上にデフォルトのネットワークサービスが作成されます。
+
+使用法: networksetup -deleteVLAN <VLAN名> <デバイス名> <タグ
+	親デバイス<デバイス名>上の<VLAN名>が一意のタグ<tag>を持つVLANを削除します。VLAN上で動作しているネットワークサービスがある場合は削除されます。
+
+使用法: networksetup -listVLANs
+	作成したVLANを一覧表示します。
+
+使用法: networksetup -listdevicesthatsupportVLAN
+	VLANをサポートしている機器を一覧表示します。
+
+使用法: networksetup -isBondSupported <デバイス名ie.
+	指定したデバイスをボンドに追加できる場合はYESを返します。できなければNO。
+
+Usage: networksetup -createBond <ユーザー定義名> <デバイス名1> <デバイス名2> <...> <...>
+	新しいボンドを作成し、ユーザー定義の名前を付けます。指定されたデバイスがあれば、ボンドに追加します。
+
+使用法: networksetup -deleteBond <ボンド名 ie.
+	指定したデバイス名のボンドを削除します。
+
+使用法: networksetup -addDeviceToBond <デバイス名> <ボンド名 
+	指定されたデバイスを指定されたボンドに追加します。
+
+使用法: networksetup -removeDeviceFromBond <デバイス名> <ボンド名
+	指定されたデバイスを指定されたボンドから外す
+
+使用法: networksetup -listBonds
+	すべての債券をリストアップしてください。
+
+使用法: networksetup -showBondStatus <bond name ie.
+	指定したボンドの状態を表示します。
+
+使用法: networksetup -listpppoeservices
+	現在のセットのPPPoEサービスをすべてリストアップします。
+
+使用法: networksetup -showpppoestatus <サービス名、つまりMyPPPoEService>。
+	指定したPPPoEサービスの状態を表示します。
+
+使用法: networksetup -createpoeservice <デバイス名(ie., en0)> <サービス名> <アカウント名> <パスワード> [pppoeサービス名]を指定します。
+	指定したデバイスにサービス名を指定してPPPoEサービスを作成します。
+	pppoeサービス名」は任意であり、サービスプロバイダがサポートしていない場合があります。
+
+使用法: networksetup -deleletepppoeservice <サービス名
+	PPPoEサービスを削除します。
+
+使用法: networksetup -setpppoeaccountname <サービス名> <アカウント名
+	指定したサービスのアカウント名を設定します。
+
+使用法: networksetup -setpppoepassword <サービス名> <パスワード
+	指定したサービスのキーチェーンに保存されているパスワードを設定します。
+
+使用法: networksetup -connectpppoeservice <サービス名
+	PPPoEサービスを接続します。
+
+使用法: networksetup -disconnectpppoeservice <サービス名
+	PPPoEサービスを切断します。
+
+使用法: networksetup -getcurrentlocation
+	現在地名を表示します。
+
+使用法: networksetup -listlocations
+	すべての場所をリストアップしてください。
+
+使用法: networksetup -createlocation <ロケーション名> [populate]
+	spcified名で新しいネットワークロケーションを作成します。
+	オプションの用語 "populate" が含まれている場合、その場所にはデフォルトのサービスが設定されます。
+
+使用法: networksetup -deleletelocation <ロケーション名
+	場所を削除します。
+
+使用法: networksetup -switchtolocation <ロケーション名
+	指定した場所を現在地にします。
+
+使用法: networksetup -listalluserprofiles
+	すべてのユーザープロファイルの名前を表示します。
+
+使用法: networksetup -listloginprofiless <サービス名
+	指定したサービスのloginwindowプロファイル名を表示します。
+
+使用法: networksetup -enablesystemprofile <サービス名> <オンオフ
+	指定したサービスのシステムプロファイルを有効または無効にします。
+
+使用法: networksetup -enableloginprofile <サービス名> <プロファイル名> <オンオフ
+	指定されたサービスの指定されたloginwindowプロファイルを有効または無効にします。
+
+使用法: networksetup -enableuserprofile <プロファイル名> <オンオフ
+	指定したユーザープロファイルを有効または無効にします。
+
+使用法: networksetup -import8021xProfiles <サービス名> <ファイルパス
+	指定されたサービスの 802.1x プロファイルをインポートします。
+
+使用法: networksetup -export8021xProfiles <サービス名> <ファイルパス> <include keychain items: yes no> <インクルードキーチェーンアイテム: yes no
+	指定したサービスのすべてのプロファイルをエクスポートします。
+	最後のパラメータが yes の場合、キーチェーンのアイテムが含まれます。
+
+使用法: networksetup -export8021xUserProfiles <ファイルパス> <include keychain items: yes no> <インクルードキーチェーンアイテム: yes no
+	ユーザープロファイルのみをエクスポートします。
+
+	最後のパラメータが yes の場合、キーチェーンのアイテムが含まれます。
+
+使用法: networksetup -export8021xLoginProfiles <サービス名> <ファイルパス> <include keychain items: yes no> <インクルードキーチェーンアイテム: yes no
+	指定されたサービスのloginwindowプロファイルのみをエクスポートします。
+
+	最後のパラメータが yes の場合、キーチェーンのアイテムが含まれます。
+
+使用法: networksetup -export8021xSystemProfile <サービス名> <ファイルパス> <include keychain items: yes no> <インクルードキーチェーンアイテム: yes no
+	指定したサービスのシステムプロファイルのみをエクスポートします。
+
+	最後のパラメータが yes の場合、キーチェーンのアイテムが含まれます。
+
+使用法: networksetup -settlsidentityonsystemprofile <サービス名> <ファイルパス> <パスフレーズ
+	指定されたサービスのシステムプロファイル上の TLS ID を設定します。
+
+	ID は pkcs12 ファイルでなければなりません。
+
+使用法: networksetup -settlsidentityonuserprofile <プロファイル名> <ファイルパス> <パスフレーズ
+	指定されたユーザープロファイルの TLS ID を設定します。
+
+	ID は pkcs12 ファイルでなければなりません。
+
+使用法: networksetup -deletesystemprofile <サービス名>を削除します。 
+	指定したサービスのシステムプロファイルを削除します。
+
+使用法: networksetup -deleteloginprofile <サービス名> <プロファイル名
+	指定されたサービスのloginwindowプロファイルを削除します。
+
+使用法: networksetup -deleteuserprofile <プロファイル名
+	指定したユーザープロファイルを削除します。
+
+使用法: networksetup -version
+	ネットワークセットアップツールのバージョンを表示します。
+
+使用法: networksetup -help
+	これらのヘルプを表示します。
+
+使用法: networksetup -printcommands
+	コマンドのクイックリストを表示します（説明なし）。
+
+パスワードを受け取るコマンドはすべて、パスワードを標準入力から読み取ることを示すために - を受け入れます。
+
+ネットワーク設定ツールは、ネットワーク設定を変更するために最低でも管理者権限を必要とします。システム環境設定 > セキュリティとプライバシーで「システム全体の環境設定にアクセスするには管理者パスワードを必要とする」オプションが選択されている場合、ネットワーク設定を変更するにはroot権限が必要です。
+
+** エラーです。パラメータが有効ではありませんでした。
+
