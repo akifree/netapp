@@ -8,7 +8,7 @@ import re
 import json_to_csv
 
 
-path_w = '/Users/aki/StudyProg/studyPython/output.json'
+# path_w = '/Users/aki/StudyProg/studyPython/output.json'
 
 # speedtestコマンドの実行、結果を標準出力する。
 # cp = subprocess.run(['speedtest', '--server-id=17838', '-f', 'json'], encoding='utf-8', stdout=subprocess.PIPE)
@@ -28,7 +28,8 @@ data = re.sub('\n', "", data)
 data = json.loads(data)  # JSON文字列を辞書に変換
 # print(type(data))
 
-json_data = open(path_w, mode='w')
+# json_data = open(path_w, mode='w')
+json_data = open('output.json', mode='w')
 json.dump(data, json_data)  # 辞書をJSONファイルとして保存
 json_data.close()
 # print("--------dump")
