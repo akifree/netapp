@@ -99,13 +99,17 @@ for i in range(1, 145, 1):
     if c_flag >= g_flag:
         cp = subprocess.run(['networksetup', '-setdnsservers',
                             'Ethernet', '2606:4700:4700::1111', '2606:4700:4700::1001', '1.1.1.1', '1.0.0.1'])
+        # cp = subprocess.run(['networksetup', '-setdnsservers',
+        #                      'Wi-Fi', '2606:4700:4700::1111', '2606:4700:4700::1001', '1.1.1.1', '1.0.0.1'])
         if cp.returncode != 0:
             print('Change DNS failed', file=sys.stderr)
             sys.exit(1)
         print("--- Set Cloudflare DNS ---------")
     else:
         cp = subprocess.run(['networksetup', '-setdnsservers',
-                            'Ethernet', '2001:4860:4860::8888', '2001:4860:4860::8844', '8.8.8.8', '8.8.4.4'])
+                             'Ethernet', '2001:4860:4860::8888', '2001:4860:4860::8844', '8.8.8.8', '8.8.4.4'])
+        # cp = subprocess.run(['networksetup', '-setdnsservers',
+        #                     'Wi-Fi', '2001:4860:4860::8888', '2001:4860:4860::8844', '8.8.8.8', '8.8.4.4'])
         if cp.returncode != 0:
             print('Change DNS failed', file=sys.stderr)
             sys.exit(1)
