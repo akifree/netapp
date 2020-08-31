@@ -1,6 +1,6 @@
 import json
 import csv
-import sys
+# import sys
 import re
 
 def change():
@@ -15,7 +15,7 @@ def change():
     ping = data['ping']['latency']
     download = data['download']['bandwidth']
     upload = data['upload']['bandwidth']
-    packetLoss = data['packetLoss']
+    # packetLoss = data['packetLoss']
     isp = data['isp']
     internalIp = data['interface']['internalIp']
     name = data['interface']['name']
@@ -26,8 +26,10 @@ def change():
     location = data['server']['location']
 
 
-    results.append([timestamp, ping, download, upload, packetLoss, isp, internalIp, name, externalIp, server_id, server, location])
+    # results.append([timestamp, ping, download, upload, packetLoss, isp, internalIp, name, externalIp, server_id, server, location])
 
+    results.append([timestamp, ping, download, upload,
+                    isp, internalIp, name, externalIp, server_id, server, location])
     flag = 0
 
     with open('speedtest.csv', 'r') as f:
@@ -48,7 +50,9 @@ def change():
     else: # データがなければ新規作成
         raw_csv = open('speedtest.csv', 'r+')
         csvwriter = csv.writer(raw_csv)
-        csvwriter.writerow(['timestamp', 'ping', 'download', 'upload', 'packetLoss', 'isp', 'internalIp', 'name', 'externalIp', 'server_id', 'server', 'location'])
+        # csvwriter.writerow(['timestamp', 'ping', 'download', 'upload', 'packetLoss', 'isp', 'internalIp', 'name', 'externalIp', 'server_id', 'server', 'location'])
+        csvwriter.writerow(['timestamp', 'ping', 'download', 'upload',
+                            'isp', 'internalIp', 'name', 'externalIp', 'server_id', 'server', 'location'])
         for result in results:
             csvwriter.writerows(results)
         raw_csv.close()
