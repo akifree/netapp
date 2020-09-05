@@ -1,0 +1,4 @@
+timestamp,ping,download,upload,isp,internalIp,name,externalIp,server_id,server,location
+2020-09-05T06:22:18Z,26.57,17895157,7053312,NTT,2400:7800:8823:8300:b8a7:ef84:781f:9df0,,2400:7800:8823:8300:b8a7:ef84:781f:9df0,34313,zawakun JP,Kyoto
+",Kyoto
+2020-09-05T06:23:36Z,27.074,18744044,10841750,NTT,2400:7800:8823:8300:b8a7:ef84:781f:9df0,,2400:7800:8823:8300:b8a7:ef84:781f:9df0,34313,zawakun JP,Kyoto
