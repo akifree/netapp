@@ -1,35 +1,44 @@
 # - Speed Test ---
 
-import subprocess
-import sys
-import re
-import json
+def speedTest():
+    import subprocess
+    import sys
+    import re
+    import json
 
-import win_json_to_csv
-
-
-cp = subprocess.run(['speedtest', '-f', 'json'], encoding='utf-8', stdout=subprocess.PIPE)
-if cp.returncode != 0:
-    print('speed test faild', file=sys.stderr)
-    sys.exit(1)
+    import win_json_to_csv
 
 
-data = cp.stdout
-data = re.sub('\n', "", data)
-# print(data)
-
-data = json.loads(data)
-
-json_data = open('win-output.json', mode='w')
-json.dump(data, json_data)
-json_data.close()
+    cp = subprocess.run(['speedtest', '-f', 'json'], encoding='utf-8', stdout=subprocess.PIPE)
+    if cp.returncode != 0:
+        print('speed test faild', file=sys.stderr)
+        sys.exit(1)
 
 
-download = int(data["download"]["bandwidth"]) * 8 / 1000 /1000
-upload = int(data["upload"]["bandwidth"]) * 8 / 1000 /1000
-download = round(download, 2)
-upload = round(upload, 2)
-print("Download: {}Mbps, Upload: {}Mbps".format(download, upload))
+    data = cp.stdout
+    data = re.sub('\n', "", data)
+    # print(data)
+
+    data = json.loads(data)
+
+    json_data = open('win-output.json', mode='w')
+    json.dump(data, json_data)
+    json_data.close()
 
 
-win_json_to_csv.change()
+    download = int(data["download"]["bandwidth"]) * 8 / 1000 /1000
+    upload = int(data["upload"]["bandwidth"]) * 8 / 1000 /1000
+    download = round(download, 2)
+    upload = round(upload, 2)
+    print("Download: {}Mbps, Upload: {}Mbps".format(download, upload))
+
+
+    win_json_to_csv.change()
+
+
+if __name__ == '__main__':
+    import time
+    for i in range(1, 168, 1):
+        time.sleep(3600)
+        print(i, "時間経過")
+        speedTest()
