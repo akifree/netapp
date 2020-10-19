@@ -1,2 +1,4 @@
 .vscode/settings.json
 __pycache__/win_json_to_csv.cpython-38.pyc
+*.csv
+*.json
